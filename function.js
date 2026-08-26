@@ -9,3 +9,8 @@ function sayName(name) {
     console.log(`hello ${name}`)
 }
 sayName("NITUL")
+function isValid(email) {
+    return email.includes("@") && email.includes(".com")
+}
+console.log(isValid("nitul@gmail.com"))
+console.log(isValid("nitul@mail.com"))

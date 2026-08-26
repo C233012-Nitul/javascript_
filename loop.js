@@ -7,4 +7,15 @@ Names.forEach((i) => {
 })
 for(let i = 0; i < Names.length; i++){
     console.log(i)
+} 
+for(let i = 0; i < 5; i++) {
+    console.log(`count: ${i}`);
+}
+for(let i = 0; i < Names.length; i++) {
+    console.log(`Name ${i} : ${Names[i]}`)
+}
+let i = 0;
+while(i < Names.length) {
+    console.log(`Name ${i} : ${Names[i]}`)
+    i++;
 }
