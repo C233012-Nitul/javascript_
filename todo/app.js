@@ -10,3 +10,16 @@ let taskList = document.getElementById("taskList");
 
 // let addBtn2 = document.querySelector("#addBtn")
 //console.log(addBtn2)
+
+// addBtn.addEventListener("click", function () {
+//   console.log("btn clicked");
+// });
+addBtn.addEventListener("click", () => {
+  console.log(taskInput.value);
+});
+
+taskInput.addEventListener("keydown", (event) => {
+  if (event.key == "Enter") {
+    console.log("Enter pressed", taskInput.value);
+  }
+});
