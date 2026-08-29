@@ -1,0 +1,86 @@
+/* General Page Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* The Main App Container */
+.app {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    color: #1f2937;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Input Row Layout */
+.input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Text Input Styling */
+#taskInput {
+    flex: 1; /* Takes up the remaining space */
+    padding: 10px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#taskInput:focus {
+    border-color: #3b82f6;
+}
+
+/* Button Styling and Color */
+#addBtn {
+    background-color: #3b82f6; /* Modern Blue */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#addBtn:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+}
+
+/* Task List Reset */
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Optional: Preview styles for the list items your JS will generate */
+#taskList li {
+    background: #f9fafb;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    text-align: left;
+    color: #374151;
+}
