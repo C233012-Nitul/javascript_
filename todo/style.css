@@ -1,86 +1,122 @@
 /* General Page Styling */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f3f4f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 /* The Main App Container */
 .app {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
 }
 
 /* Heading */
 h1 {
-    color: #1f2937;
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 24px;
+  color: #1f2937;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
 }
 
 /* Input Row Layout */
 .input-row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 /* Text Input Styling */
 #taskInput {
-    flex: 1; /* Takes up the remaining space */
-    padding: 10px 15px;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.2s;
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
 }
 
 #taskInput:focus {
-    border-color: #3b82f6;
+  border-color: #3b82f6;
 }
 
-/* Button Styling and Color */
+/* Add Button Styling */
 #addBtn {
-    background-color: #3b82f6; /* Modern Blue */
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 #addBtn:hover {
-    background-color: #2563eb; /* Darker blue on hover */
+  background-color: #2563eb;
 }
 
 /* Task List Reset */
 #taskList {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Optional: Preview styles for the list items your JS will generate */
-#taskList li {
-    background: #f9fafb;
-    padding: 12px;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    margin-bottom: 8px;
-    text-align: left;
-    color: #374151;
+/* NEW: Task Item (li) Styling */
+.task-item {
+  background: #f9fafb;
+  padding: 12px 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between; /* Pushes text left, buttons right */
+  align-items: center;
+  color: #374151;
+  transition: box-shadow 0.2s ease;
+}
+
+.task-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* NEW: Task Text (span) */
+.task-text {
+  flex: 1;
+  text-align: left;
+  margin-right: 15px;
+  word-break: break-word; /* Prevents long words from breaking the layout */
+}
+
+/* NEW: Button Wrapper (div) */
+.task-button {
+  display: flex;
+  gap: 8px; /* Adds space between the check and cross buttons */
+}
+
+/* NEW: Action Buttons (✅ and ❎) */
+.task-button button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.task-button button:hover {
+  background-color: #e5e7eb; /* Soft gray hover effect */
 }
