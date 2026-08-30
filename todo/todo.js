@@ -22,9 +22,18 @@ function render() {
     //complete btn
     let completeBtn = document.createElement("button");
     completeBtn.textContent = "✅";
+
+    completeBtn.addEventListener("click", () => {
+      completeTask(task.id);
+    });
+
     //delete button
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "❎";
+
+    deleteBtn.addEventListener("click", () => {
+      deleteTask(task.id);
+    });
 
     //sob button btnwrapper a
     btnWrapper.appendChild(completeBtn);
@@ -46,13 +55,13 @@ function addTask() {
   }
 
   //same value age ase nki check
-  let oldTask = tasks.find((task) => task.text === taskText);
-  if (oldTask) {
-    oldTask.completed = true;
-    taskInput.value = "";
-    render();
-    return;
-  }
+  // let oldTask = tasks.find((task) => task.text === taskText);
+  // if (oldTask) {
+  //   oldTask.completed = true;
+  //   taskInput.value = "";
+  //   render();
+  //   return;
+  // }
   let newTask = {
     id: taskCounter++,
     text: taskText,
@@ -73,3 +82,17 @@ taskInput.addEventListener("keydown", (e) => {
     addTask();
   }
 });
+//function for complete
+function completeTask(id) {
+  let task = tasks.find((task) => task.id == id);
+  task.completed = !task.completed;
+  //task.classList.add("completed")
+  render();
+}
+
+//function for delete
+function deleteTask(id) {
+  tasks = tasks.filter((task) => task.id != id);
+  //taskCounter--;
+  render();
+}
