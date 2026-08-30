@@ -12,13 +12,18 @@ function render() {
   tasks.forEach((task) => {
     let li = document.createElement("li");
     li.classList.add("task-item");
+
     //lekha gula span korte
     let span = document.createElement("span");
     span.classList.add("task-text");
     span.textContent = `${task.text} ${task.completed === false ? "not" : ""} completed ${task.id}`;
+
+
     //butto wrap
     let btnWrapper = document.createElement("div");
     btnWrapper.classList.add("task-button");
+
+
     //complete btn
     let completeBtn = document.createElement("button");
     completeBtn.textContent = "✅";
@@ -26,6 +31,7 @@ function render() {
     completeBtn.addEventListener("click", () => {
       completeTask(task.id);
     });
+
 
     //delete button
     let deleteBtn = document.createElement("button");
@@ -35,9 +41,12 @@ function render() {
       deleteTask(task.id);
     });
 
+
     //sob button btnwrapper a
     btnWrapper.appendChild(completeBtn);
     btnWrapper.appendChild(deleteBtn);
+
+
     // sob kisu li a append
     li.appendChild(span);
     li.appendChild(btnWrapper);
@@ -67,6 +76,7 @@ function addTask() {
     text: taskText,
     completed: false,
   };
+
   //new task array a push
   tasks.push(newTask);
   //console.log(newTask);
@@ -82,6 +92,8 @@ taskInput.addEventListener("keydown", (e) => {
     addTask();
   }
 });
+
+
 //function for complete
 function completeTask(id) {
   let task = tasks.find((task) => task.id == id);
@@ -89,6 +101,7 @@ function completeTask(id) {
   //task.classList.add("completed")
   render();
 }
+
 
 //function for delete
 function deleteTask(id) {
