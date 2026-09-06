@@ -8,10 +8,14 @@ const member = [
   { firstName: "taslim", lastName: "4", age: 34 },
 ];
 function App() {
-  
+  //return <TestComponent/>;
+  //return <Card firstName="mohammad" lastName="Nitul" age={23} />;
   return (
     <div>
-      {member.map((member) => (
+      {/* <Card firstName="mohammad" lastName="Nitul" age={23}></Card>
+      <Card firstName="mohammad" lastName="ali" age={13}></Card> */}
+      //filter kore sort kore map...
+      {member.filter((member) => member.age > 18).sort((a, b) => b.age - a.age).map((member) => (
         <Card
           firstName={member.firstName}
           lastName={member.lastName}
