@@ -1,33 +1,23 @@
+import { useState } from "react";
 import "./card.css";
-
+//!useState must be in top
+//!must be inside component
 export default function Card(props) {
+  const [member, setMember] = useState("");
+
   const { firstName, lastName, age } = props;
   const clickHandler = (memberName) => {
-    
-    console.log(`Hello ${memberName}`);
+    //console.log(`Hello ${memberName}`);
+    setMember(memberName);
   };
-  const anotherClick = () =>{
-    console.log('Hello')
-  }
-  const greet = (membername) =>{
-    clickHandler(membername)
-    anotherClick()
-  }
+
   return (
     <>
-      <div
-        onClick={() => greet(firstName)}
-        //   onMouseDown={}
-        //   onMouseEnter={}
-        //   onScroll={}
-        //   onSubmit={}
-        //   onBlur={}
-
-        className="card"
-      >
+      <div onClick={() => clickHandler(firstName)} className="card">
         <p>firstName : {firstName} </p>
         <p>lastName : {lastName} </p>
         <p>age : {age} </p>
+        {member && <p>greating {member}</p>}
       </div>
     </>
   );

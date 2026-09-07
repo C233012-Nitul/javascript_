@@ -1,0 +1,12 @@
+.counter{
+    background-color: aqua;
+    padding: 10px;
+    background: -moz-element();
+}
+.btn{
+    background-color: burlywood;
+    padding: 10px;
+    border: 2px;
+    margin: 2px;
+    border-color: black;
+}
