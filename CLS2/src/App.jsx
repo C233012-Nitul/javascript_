@@ -6,6 +6,8 @@ import Counter from "./components/counter.jsx";
 import Display from "./components/display.jsx";
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [val, setVal] = useState("");
   const [firstName, setFName] = useState("");
   const [lastName, setLName] = useState("");
   const [age, setAge] = useState("");
@@ -15,16 +17,17 @@ function App() {
     { firstName: "mohammad", lastName: "3", age: 22 },
     { firstName: "taslim", lastName: "4", age: 34 },
   ]);
-  const [number, setNumber] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     //console.log(name)
-    setMembers([...members, { firstName, lastName, age }]);
-    //!same ->> setMembers((prev) => [...prev, { firstName, lastName, age }]);
-    setFName("");
-    setLName("");
-    setAge("");
-    setNumber("");
+    // setMembers([...members, { firstName, lastName, age }]);
+    // //!same ->> setMembers((prev) => [...prev, { firstName, lastName, age }]);
+    // setFName("");
+    // setLName("");
+    // setAge("");
+    // setCount("");
+     setVal("");
   };
   return (
     <div>
@@ -60,14 +63,13 @@ function App() {
       <form onSubmit={handleSubmit}>
         <input
           type="number"
-          value={number}
-          onChange={(e) => setNumber(e.target.value)}
+          value={val}
+          onChange={(e) => setVal(Number(e.target.value))}
           placeholder="Entet Number"
         />
-        <button type="submit">Submit</button>
       </form>
-      <Counter value= {number} />
-      <Display />
+      <Counter count={count} setCount={setCount} val={val} />
+      <Display count={count} />
     </div>
   );
 }

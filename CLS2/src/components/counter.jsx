@@ -1,39 +1,35 @@
 import { useState } from "react";
 import "./counter.css";
-export default function Counter({val}) {
-  const [count, setCount] = useState(0);
+export default function Counter({count, setCount, val}) {
+  
     
   const newVal = Number(val) || 0
   const handleIncrement = () => {
-    setCount(count + 1);
+    setCount(prev => prev + 1);
   };
   const handledecrement = () => {
-    setCount(count > 0 ? count - 1 : 0);
+    setCount(prev => prev > 0 ? prev - 1 : 0);
   };
-  const handleValue = (value) => {
-    setCount(count + value);
+  const handleValue = () => {
+    setCount(prev => prev + newVal);
   };
-  const delValue = (value) => {
-    setCount(count >= value ? count - value : 0);
+  const delValue = () => {
+    setCount(prev => prev >= newVal ? prev - newVal : 0);
   };
-  const handleClick = () =>{
-    setCount(count)
-    setCount("")
-  }
 
   return (
     <div className="counter">
       <button onClick={handleIncrement} className="btn">
         Increment
       </button>
-      <span>{count}</span>
+      {/* <span>{count}</span> */}
       <button onClick={handledecrement} className="btn">
         Decrement
       </button>
-      <button onClick={() => handleValue(newVal)} className="btn">
+      <button onClick={() => handleValue()} className="btn">
         ADD VALUE
       </button>
-      <button onClick={() => delValue(newVal)} className="btn">Delete Value</button>
+      <button onClick={() => delValue()} className="btn">Delete Value</button>
     </div>
   );
 }
