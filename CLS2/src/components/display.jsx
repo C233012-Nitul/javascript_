@@ -1,8 +1,10 @@
 import "./card.css";
-export default function Display({ count }) {
+import NestedDisplay from "./nestedDisplay";
+
+export default function Display() {
   return (
     <div className="card-blue">
-      <h1> {count} </h1>
+      <NestedDisplay />
     </div>
   );
 }

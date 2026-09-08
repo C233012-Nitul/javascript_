@@ -4,10 +4,11 @@ import Card from "./components/card.jsx";
 import Counter from "./components/counter.jsx";
 //import TestComponent from "./testComponent";
 import Display from "./components/display.jsx";
+import CounterProvider from "./provider/counter.Provider.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [val, setVal] = useState("");
+  // const [count, setCount] = useState(0);
+  // const [val, setVal] = useState("");
   const [firstName, setFName] = useState("");
   const [lastName, setLName] = useState("");
   const [age, setAge] = useState("");
@@ -30,7 +31,7 @@ function App() {
      setVal("");
   };
   return (
-    <div>
+    <CounterProvider>
       {/* <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -68,9 +69,9 @@ function App() {
           placeholder="Entet Number"
         />
       </form>
-      <Counter count={count} setCount={setCount} val={val} />
-      <Display count={count} />
-    </div>
+      <Counter  />
+      <Display  />
+    </CounterProvider>
   );
 }
 export default App;
