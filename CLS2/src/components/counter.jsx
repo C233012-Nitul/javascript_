@@ -16,6 +16,10 @@ export default function Counter({val}) {
   const delValue = (value) => {
     setCount(count >= value ? count - value : 0);
   };
+  const handleClick = () =>{
+    setCount(count)
+    setCount("")
+  }
 
   return (
     <div className="counter">
