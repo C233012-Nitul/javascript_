@@ -1,35 +1,23 @@
-import { useState } from "react";
-import "./counter.css";
-export default function Counter({count, setCount, val}) {
-  
-    
-  const newVal = Number(val) || 0
+import { use } from "react";
+import "./card.css";
+import {CounterContext} from '../provider/counter.Provider.jsx'
+export default function Counter() {
+  const {count, setCount} = use(CounterContext)
   const handleIncrement = () => {
-    setCount(prev => prev + 1);
+    setCount(count + 1);
   };
-  const handledecrement = () => {
-    setCount(prev => prev > 0 ? prev - 1 : 0);
+  const handleIncrementValue = (value) => {
+    setCount(count + value);
   };
-  const handleValue = () => {
-    setCount(prev => prev + newVal);
-  };
-  const delValue = () => {
-    setCount(prev => prev >= newVal ? prev - newVal : 0);
+  const handleDecrement = () => {
+    setCount(count > 0 ? count - 1 : 0);
   };
 
-  return (
-    <div className="counter">
-      <button onClick={handleIncrement} className="btn">
-        Increment
-      </button>
-      {/* <span>{count}</span> */}
-      <button onClick={handledecrement} className="btn">
-        Decrement
-      </button>
-      <button onClick={() => handleValue()} className="btn">
-        ADD VALUE
-      </button>
-      <button onClick={() => delValue()} className="btn">Delete Value</button>
-    </div>
+  return(
+     <div className="card">
+      <button onClick={handleIncrement}>Increment</button>
+      <button onClick={() => handleIncrementValue(5)}>Increment by 5</button>
+      <button onClick={handleDecrement}>Decrement</button>
+     </div>
   );
 }

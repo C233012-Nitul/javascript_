@@ -1,14 +1,14 @@
 import { createContext, useState } from "react";
 
-const counterContext = createContext();
+// eslint-disable-next-line react-refresh/only-export-components
+export const CounterContext = createContext();
 
 export default function CounterProvider({ children }) {
   const [count, setCount] = useState(0);
-  const [val, setVal] = useState("");
 
   return (
-    <counterContext.Provider value={{ count, setCount, val, setVal }}>
+    <CounterContext.Provider value={{ count, setCount}}>
       {children}
-    </counterContext.Provider>
+    </CounterContext.Provider>
   );
 }
