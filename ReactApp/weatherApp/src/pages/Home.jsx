@@ -15,7 +15,7 @@ export default function Home() {
       <div className="flex justify-center">
         <button
           type="button"
-          onClick={() => setClick("Clicked")}
+          onClick={() => setClick(true)}
           className="cursor-pointer text-gray-300 px-5 py-1 hover:scale-105 transition-all  rounded-4xl text-lg font-medium bg-blue-500"
         >
           Check Weather
